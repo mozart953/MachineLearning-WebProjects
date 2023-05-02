@@ -88,7 +88,7 @@ const navigation = {
   ],
 }
 
-function Footer() {
+export default function Example() {
   return (
     <footer className="bg-white" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">
@@ -198,5 +198,3 @@ function Footer() {
     </footer>
   )
 }
-
-export default Footer;

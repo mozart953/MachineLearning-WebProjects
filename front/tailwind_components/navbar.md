@@ -3,9 +3,6 @@ import { Menu, Popover, Transition } from '@headlessui/react'
 import { SearchIcon } from '@heroicons/react/solid'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 
-import {connect} from "react-redux";
-import DarkModeSwitch from 'components/darkmode';
-
 const user = {
   name: 'Chelsea Hagon',
   email: 'chelsea.hagon@example.com',
@@ -28,7 +25,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-function Navbar() {
+export default function Example() {
   return (
     <>
       {/* When the mobile menu is open, add `overflow-hidden` to the `body` element to prevent double scrollbars */}
@@ -37,7 +34,7 @@ function Navbar() {
         className={({ open }) =>
           classNames(
             open ? 'fixed inset-0 z-40 overflow-y-auto' : '',
-            'bg-white dark:bg-dark-main shadow-sm lg:static lg:overflow-y-visible'
+            'bg-white shadow-sm lg:static lg:overflow-y-visible'
           )
         }
       >
@@ -54,15 +51,6 @@ function Navbar() {
                         alt="Workflow"
                       />
                     </a>
-                    <div className='ml-4'>
-                      <DarkModeSwitch/>
-                    </div>
-
-                    
-
-
-
-
                   </div>
                 </div>
                 <div className="min-w-0 flex-1 md:px-8 lg:px-0 xl:col-span-6">
@@ -205,10 +193,3 @@ function Navbar() {
     </>
   )
 }
-
-
-const mapStateToProps = state =>({
-
-})
-
-export default connect(mapStateToProps, {})(Navbar);

@@ -1,23 +1,24 @@
 import Alert from "components/alert";
 import Footer from "components/navigation/Footer";
 import Navbar from "components/navigation/Navbar";
-import { Connect } from "react-redux";
+import { connect } from "react-redux";
 
-
-const FullWidthLayout = ({children})=>{
-    return(
-        <div>
-            <Navbar/>
+const FullWidthLayout = ({ children }) => {
+  return (
+    <div>
+      <Navbar />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
             {children}
-            <Footer/>
-            <Alert/>
-
         </div>
-    )
-}
+      </div>
 
-const mapStateToProps = state =>({
+      <Footer />
+      <Alert />
+    </div>
+  );
+};
 
-})
+const mapStateToProps = (state) => ({});
 
-export default connect(mapStateToProps, {}) (FullWidthLayout);
+export default connect(mapStateToProps, {})(FullWidthLayout);
